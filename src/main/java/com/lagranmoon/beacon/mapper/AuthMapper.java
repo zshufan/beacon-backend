@@ -12,9 +12,11 @@ public interface AuthMapper {
 
     void saveUser(UserAuth userAuth);
 
-    void updateSessionKey(@Param("openId") String openId
-            ,@Param("sessionKey")String sessionKey);
+    void updateSessionKey(@Param("openId") String openId,
+                          @Param("sessionKey")String sessionKey);
 
-    void getSessionKey(@Param("uid")String id);
+    String getSessionKey(@Param("uid")Long id);
+
+    void truncateTable();
 
 }

@@ -18,7 +18,11 @@
     <update id="updateSessionKey">
         UPDATE user_auth
         SET session_key=#{sessionKey}
-        WHERE id = #{openId}
+        WHERE open_id = #{openId}
+    </update>
+
+    <update id="truncateTable">
+        TRUNCATE TABLE user_auth
     </update>
 
 </mapper>
