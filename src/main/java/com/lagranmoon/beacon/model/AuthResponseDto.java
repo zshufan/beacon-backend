@@ -8,4 +8,7 @@ import lombok.Data;
 @Data
 public class AuthResponseDto {
 
+    private Integer uid;
+
+    private String token;
 }

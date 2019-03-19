@@ -6,10 +6,13 @@ import lombok.Data;
  * @author Lagranmoon
  */
 @Data
-public class User {
+public class UserAuth {
+
+    private Long uid;
 
     private String openId;
 
-    private String nickName;
-    
+    private String userName;
+
+    private String sessionKey;
 }
