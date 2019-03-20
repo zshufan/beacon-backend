@@ -1,0 +1,11 @@
+spring:
+  profiles:
+    active: dev
+  jackson:
+    default-property-inclusion: non_absent
+    property-naming-strategy: SNAKE_CASE
+mybatis:
+  mapper-locations: classpath:com/lagranmoon/beacon/mapper/*.xml
+  type-aliases-package: com.lagranmoon.beacon.model.domain
+  configuration:
+    map-underscore-to-camel-case: true
