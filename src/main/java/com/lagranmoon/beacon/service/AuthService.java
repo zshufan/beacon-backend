@@ -9,5 +9,5 @@ public interface AuthService {
 
     AuthResponseDto auth(String code);
 
-    Boolean verify(String token);
+    String  verify(String token);
 }

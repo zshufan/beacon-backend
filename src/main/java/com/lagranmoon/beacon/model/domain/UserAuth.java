@@ -8,7 +8,7 @@ import lombok.Data;
 @Data
 public class UserAuth {
 
-    private Long uid;
+    private Long id;
 
     private String openId;
 

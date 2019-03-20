@@ -4,7 +4,7 @@
 <mapper namespace="com.lagranmoon.beacon.mapper.AuthMapper">
 
     <insert id="saveUser" parameterType="UserAuth" useGeneratedKeys="true"
-            keyProperty="uid">
+            keyProperty="id">
         INSERT INTO user_auth(open_id, user_name, session_key)
         VALUES (#{openId}, #{userName}, #{sessionKey})
     </insert>
@@ -12,7 +12,7 @@
     <select id="getSessionKey" resultType="string">
         SELECT session_key
         FROM user_auth
-        WHERE id = #{uid}
+        WHERE id = #{id}
     </select>
 
     <update id="updateSessionKey">
@@ -21,8 +21,15 @@
         WHERE open_id = #{openId}
     </update>
 
-    <update id="truncateTable">
-        TRUNCATE TABLE user_auth
-    </update>
+    <select id="getOpenIdByid" resultType="string">
+        SELECT open_id
+        FROM user_auth
+        WHERE id = #{id}
+    </select>
 
+    <select id="getUserNameByOpenId" resultType="string">
+        SELECT user_name
+        FROM user_auth
+        WHERE open_id = #{openId}
+    </select>
 </mapper>

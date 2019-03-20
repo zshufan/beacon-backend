@@ -13,10 +13,12 @@ public interface AuthMapper {
     void saveUser(UserAuth userAuth);
 
     void updateSessionKey(@Param("openId") String openId,
-                          @Param("sessionKey")String sessionKey);
+                          @Param("sessionKey") String sessionKey);
 
-    String getSessionKey(@Param("uid")Long id);
+    String getSessionKeyByUid(@Param("id") Long id);
 
-    void truncateTable();
+    String getOpenIdByid(@Param(("id")) Long id);
+
+    String getUserNameByOpenId(@Param("openId") String openId);
 
 }

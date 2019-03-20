@@ -24,9 +24,11 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
     implementation 'org.springframework.boot:spring-boot-starter-web'
 
-    implementation 'com.squareup.retrofit2:retrofit:2.5.0'
-    implementation 'io.reactivex.rxjava2:rxjava:2.2.7'
 
+    implementation 'io.jsonwebtoken:jjwt-api:0.10.5'
+    runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.10.5'
+    runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.10.5'
+    
     implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.0.0'
     compileOnly 'org.projectlombok:lombok'
     runtimeOnly 'org.springframework.boot:spring-boot-devtools'
