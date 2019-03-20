@@ -1,11 +1,13 @@
 package com.lagranmoon.beacon.model.domain;
 
+import lombok.Builder;
 import lombok.Data;
 
 /**
  * @author Lagranmoon
  */
 @Data
+@Builder
 public class UserAuth {
 
     private Long id;

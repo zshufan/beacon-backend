@@ -7,7 +7,7 @@ import com.lagranmoon.beacon.model.AuthResponseDto;
  */
 public interface AuthService {
 
-    AuthResponseDto auth(String code);
+    AuthResponseDto auth(String code,String userName);
 
     String  verify(String token);
 }

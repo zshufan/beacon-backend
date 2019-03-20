@@ -3,6 +3,7 @@ package com.lagranmoon.beacon.interceptor;
 import com.lagranmoon.beacon.exception.UnAuthorizedException;
 import com.lagranmoon.beacon.service.AuthService;
 import org.springframework.stereotype.Component;
+import org.springframework.util.StringUtils;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 import javax.annotation.Resource;
@@ -23,7 +24,7 @@ public class AuthInterceptor extends HandlerInterceptorAdapter {
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         String token =request.getHeader("Authorization");
 
-        if (token.isEmpty()){
+        if (StringUtils.isEmpty(token)){
             throw new UnAuthorizedException("Token is missing");
         }
 

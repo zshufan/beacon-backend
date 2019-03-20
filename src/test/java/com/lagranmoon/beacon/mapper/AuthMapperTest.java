@@ -24,10 +24,11 @@ public class AuthMapperTest {
 
     @BeforeClass
     public static void prepareData(){
-        userAuth = new UserAuth();
-        userAuth.setUserName("Lagranmoon");
-        userAuth.setOpenId("20190319");
-        userAuth.setSessionKey("fgeuhysdyfgwq9eiuq9eduwqhd");
+        userAuth = UserAuth.builder()
+                .userName("Lagranmoon")
+                .openId("20190319")
+                .sessionKey("fgruhdsfrgbruyfgweufwefw")
+                .build();
     }
 
     @Test
