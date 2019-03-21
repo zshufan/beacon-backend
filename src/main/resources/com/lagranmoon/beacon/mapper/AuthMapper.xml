@@ -9,7 +9,7 @@
         VALUES (#{openId}, #{userName}, #{sessionKey})
     </insert>
 
-    <select id="getSessionKey" resultType="string">
+    <select id="getSessionKeyById" resultType="string">
         SELECT session_key
         FROM user_auth
         WHERE id = #{id}
@@ -21,7 +21,7 @@
         WHERE open_id = #{openId}
     </update>
 
-    <select id="getOpenIdByid" resultType="string">
+    <select id="getOpenIdById" resultType="string">
         SELECT open_id
         FROM user_auth
         WHERE id = #{id}

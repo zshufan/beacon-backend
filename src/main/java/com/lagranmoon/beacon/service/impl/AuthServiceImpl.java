@@ -8,23 +8,18 @@ import com.lagranmoon.beacon.model.WechatAuthResp;
 import com.lagranmoon.beacon.model.domain.UserAuth;
 import com.lagranmoon.beacon.service.AuthService;
 import com.lagranmoon.beacon.util.JwtKeyResolver;
-import io.jsonwebtoken.Jwt;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.Keys;
-import jdk.jfr.Unsigned;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 import org.springframework.web.client.RestTemplate;
 
 import javax.annotation.Resource;
-import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 
@@ -109,7 +104,7 @@ public class AuthServiceImpl implements AuthService {
                     .getHeader()
                     .getKeyId();
 
-            return authMapper.getOpenIdByid(Long.valueOf(kid));
+            return authMapper.getOpenIdById(Long.valueOf(kid));
         } catch (Exception e) {
             log.info("{} is invalid", token);
             return "";
