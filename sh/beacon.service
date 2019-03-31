@@ -1,8 +1,0 @@
-[Unit]
-Description=
-After=syslog.target
-[Service]
-User=beacon
-ExecStart=/var/beacon/beacon.jar
-[Install]
-WantedBy=multi-user.target
