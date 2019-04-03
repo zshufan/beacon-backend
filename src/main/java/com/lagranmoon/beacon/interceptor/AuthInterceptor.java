@@ -16,6 +16,8 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.Enumeration;
+import java.util.Iterator;
 
 /**
  * @author Lagranmoon
@@ -33,12 +35,19 @@ public class AuthInterceptor extends HandlerInterceptorAdapter {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws IOException {
 
+        Enumeration<String> httpHeaders = request.getHeaderNames();
+
+        while (httpHeaders.hasMoreElements()){
+            System.out.println(httpHeaders.nextElement());
+        }
+
         try {
             String token = request.getHeader("Authorization");
 
             if (StringUtils.isEmpty(token)) {
                 throw new UnAuthorizedException("Token is missing");
             }
+
 
             String openId = authService.verify(token);
 

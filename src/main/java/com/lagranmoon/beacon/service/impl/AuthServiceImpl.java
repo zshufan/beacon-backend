@@ -3,11 +3,10 @@ package com.lagranmoon.beacon.service.impl;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.lagranmoon.beacon.exception.UnAuthorizedException;
 import com.lagranmoon.beacon.mapper.AuthMapper;
-import com.lagranmoon.beacon.model.AuthResponseDto;
+import com.lagranmoon.beacon.model.AuthDto;
 import com.lagranmoon.beacon.model.WechatAuthResp;
 import com.lagranmoon.beacon.model.domain.UserAuth;
 import com.lagranmoon.beacon.service.AuthService;
-import com.lagranmoon.beacon.util.JwtKeyResolver;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.security.Keys;
@@ -50,9 +49,7 @@ public class AuthServiceImpl implements AuthService {
     @Resource
     private AuthMapper authMapper;
 
-//    @Resource
-//    private JwtKeyResolver resolver;
-
+    @Resource
     private RedisTemplate redisTemplate;
 
     @Resource
@@ -60,34 +57,23 @@ public class AuthServiceImpl implements AuthService {
 
     @Override
     @SuppressWarnings("unchecked")
-    public AuthResponseDto auth(String code, String userName) {
+    public AuthDto auth(String code, String userName) {
 
-        MappingJackson2HttpMessageConverter mappingJackson2HttpMessageConverter
-                = new MappingJackson2HttpMessageConverter(objectMapper);
-        mappingJackson2HttpMessageConverter.setSupportedMediaTypes(List.of(MediaType.APPLICATION_JSON, MediaType.TEXT_PLAIN));
-        RestTemplate template = new RestTemplate(List.of(mappingJackson2HttpMessageConverter));
+        log.debug(code);
 
+        WechatAuthResp resp = code2Session(code);
 
-        WechatAuthResp wechatResp;
-        try {
-            wechatResp =
-                    template.getForObject(authUrl, WechatAuthResp.class, appId, appSecret, code);
-            Objects.requireNonNull(wechatResp);
-        } catch (Exception e) {
-            log.debug(e.getLocalizedMessage());
-            throw new UnAuthorizedException("连接微信服务器失败");
-        }
+        log.debug(resp.toString());
 
-
-        if (StringUtils.isEmpty(wechatResp.getSessionKey())) {
-            throw new UnAuthorizedException(wechatResp.getErrMsg(), wechatResp.getErrCode());
+        if (StringUtils.isEmpty(resp.getSessionKey())) {
+            throw new UnAuthorizedException(resp.getErrMsg(), resp.getErrCode());
         }
 
         UserAuth userAuth = UserAuth
                 .builder()
                 .userName(userName)
-                .openId(wechatResp.getOpenId())
-                .sessionKey(wechatResp.getSessionKey())
+                .openId(resp.getOpenId())
+                .sessionKey(resp.getSessionKey())
                 .build();
 
         authMapper.saveUser(userAuth);
@@ -95,7 +81,6 @@ public class AuthServiceImpl implements AuthService {
         Key key = Keys.secretKeyFor(SignatureAlgorithm.HS256);
 
         String token = Jwts.builder()
-//                .setHeaderParam("kid", userAuth.getId())
                 .signWith(key)
                 .setSubject(String.valueOf(userAuth.getId()))
                 .setExpiration(new Date(System.currentTimeMillis()+3*24*3600))
@@ -104,9 +89,8 @@ public class AuthServiceImpl implements AuthService {
         redisTemplate.opsForValue().set(token,
                 Base64Utils.encodeToString(key.getEncoded()), Duration.ofDays(3));
 
-        return new AuthResponseDto(userAuth.getId(), token);
 
-
+        return new AuthDto(userAuth.getId(), token);
     }
 
     @Override
@@ -129,5 +113,26 @@ public class AuthServiceImpl implements AuthService {
             return "";
         }
     }
+
+    private WechatAuthResp code2Session(String code){
+
+        MappingJackson2HttpMessageConverter mappingJackson2HttpMessageConverter
+                = new MappingJackson2HttpMessageConverter(objectMapper);
+        mappingJackson2HttpMessageConverter.setSupportedMediaTypes(List.of(MediaType.APPLICATION_JSON, MediaType.TEXT_PLAIN));
+        RestTemplate template = new RestTemplate(List.of(mappingJackson2HttpMessageConverter));
+
+        WechatAuthResp wechatResp;
+        try {
+            wechatResp =
+                    template.getForObject(authUrl, WechatAuthResp.class, appId, appSecret, code);
+            Objects.requireNonNull(wechatResp);
+        } catch (Exception e) {
+            log.debug(e.getLocalizedMessage());
+            throw new UnAuthorizedException("连接微信服务器失败");
+        }
+
+        return wechatResp;
+    }
+
 
 }

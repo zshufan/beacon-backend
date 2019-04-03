@@ -8,7 +8,7 @@ import lombok.Data;
  */
 @Data
 @AllArgsConstructor
-public class AuthResponseDto {
+public class AuthDto {
 
     private Long uid;
 

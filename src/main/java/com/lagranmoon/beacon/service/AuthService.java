@@ -1,6 +1,6 @@
 package com.lagranmoon.beacon.service;
 
-import com.lagranmoon.beacon.model.AuthResponseDto;
+import com.lagranmoon.beacon.model.AuthDto;
 
 /**
  * @author Lagranmoon
@@ -14,7 +14,7 @@ public interface AuthService {
      * @param userName 用户名
      * @return 返回自定义登录态（JWT Token）和UID
      */
-    AuthResponseDto auth(String code,String userName);
+    AuthDto auth(String code, String userName);
 
     /**
      * 判断Token是否为有效的Token
