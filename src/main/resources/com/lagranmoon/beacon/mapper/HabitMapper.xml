@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lagranmoon.beacon.mapper.HabitMapper">
+
+    <insert id="insertHabit" parameterType="Habit" useGeneratedKeys="true"
+            keyProperty="id">
+
+        INSERT INTO habit(openId, title, content, frequency, duration, create_time)
+        VALUES (#{openId}, #{title}, #{content}, #{frequency}, #{duration}, #{createTime})
+
+    </insert>
+
+    <insert id="insertHabitTags">
+        INSERT INTO habit_tag(habit_id, tag_id) VALUES
+        <foreach collection="list" item="tag" index="index" separator=",">
+            (#{habitId},#{tag})
+        </foreach>
+    </insert>
+
+    <select id="getHabitByOpenId" parameterType="string" resultType="Habit">
+        SELECT id, title
+        FROM habit
+        WHERE openId = #{openId}
+    </select>
+
+    <select id="getHabitTagsById" parameterType="long" resultType="string">
+        SELECT tag.name
+        FROM tag
+        WHERE tag.id IN (
+            SELECT habit_tag.tag_id
+            FROM habit_tag
+            WHERE habit_tag.habit_id = #{habitId}
+        )
+    </select>
+
+    <select id="getFrequencyById" parameterType="long" resultType="integer">
+        SELECT count
+        FROM habit_daily
+        WHERE habit_id = #{habitId}
+    </select>
+
+    <select id="getTagIdsByName" parameterType="java.util.List" resultType="long">
+        SELECT id
+        FROM tag
+        WHERE name IN
+        <foreach collection="list"
+                 index="index" separator="," item="tagName" open="(" close=")">
+            #{tagName}
+        </foreach>
+    </select>
+
+</mapper>

@@ -12,7 +12,7 @@ public class HabitDto {
 
     private Long id;
     private String title;
-    private Integer times;
+    private Integer count;
     private List<String> typeList;
 
 
