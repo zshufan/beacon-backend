@@ -1,12 +1,10 @@
 package com.lagranmoon.beacon.mapper;
 
 import com.lagranmoon.beacon.model.domain.Habit;
-import com.lagranmoon.beacon.model.domain.HabitDetail;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
-import java.util.Map;
 
 /**
  * @author Lagranmoon
@@ -15,11 +13,26 @@ import java.util.Map;
 public interface HabitMapper {
 
 
+    /**
+     * 根据用户的OpenID返回Habit
+     * @param openId 用户的OpenID
+     * @return 返回的Habit中包含id和title
+     */
     List<Habit> getHabitByOpenId(String openId);
 
+    /**
+     * 根据Habit ID获取其所有的Tag
+     * @param habitId Habit Id
+     * @return Tag名称列表
+     */
     List<String> getHabitTagsById(Long habitId);
 
-    void getFrequencyById(Long habitId);
+    /**
+     * 根据Habit ID获取当前Habit完成次数
+     * @param habitId Habit ID
+     * @return Habit完成次数
+     */
+    Integer getCountById(Long habitId);
 
     void insertHabit(Habit habit);
 
@@ -27,6 +40,8 @@ public interface HabitMapper {
             ,@Param("tagList") List<Long> tagList);
 
     List<Long> getTagIdsByName(List<String> tagList);
+
+    List<String> getTagNameById(Long habitId);
 
 
 

@@ -1,5 +1,6 @@
 package com.lagranmoon.beacon.model;
 
+import lombok.Builder;
 import lombok.Data;
 
 import java.util.List;
@@ -8,12 +9,13 @@ import java.util.List;
  * @author Lagranmoon
  */
 @Data
+@Builder
 public class HabitDto {
 
     private Long id;
     private String title;
     private Integer count;
-    private List<String> typeList;
+    private List<String> tagList;
 
 
 }
