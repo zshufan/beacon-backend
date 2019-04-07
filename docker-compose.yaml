@@ -2,12 +2,12 @@ version: '3'
 services:
 
   web:
+    container_name: beacon
     build:
       context: dist/beacon/
       dockerfile: Dockerfile
     ports:
       - "8090:8090"
-    container_name: beacon
     links:
       - redis
       - db
@@ -16,10 +16,12 @@ services:
       - db
 
   redis:
-    image: "redis:alpine"
     container_name: beacon-redis
+    image: "redis:alpine"
   db:
+    container_name: beacon-db
     build:
       context: dist/sql/
       dockerfile: Dockerfile
-    container_name: beacon-db
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456

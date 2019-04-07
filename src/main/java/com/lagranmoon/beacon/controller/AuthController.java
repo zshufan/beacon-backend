@@ -28,13 +28,13 @@ public class AuthController {
     public ResponseEntity auth(@RequestBody @Valid AuthRequestDto requestDto) {
 
 //        AuthDto response = authService.auth(requestDto.getCode(), requestDto.getNickName());
-        AuthDto response = new AuthDto(2L,"2333");
+        AuthDto response = new AuthDto(2L, "2333");
         return ResponseEntity
                 .ok(ResponseDto.builder()
-                                .data(response)
+                        .data(response)
                         .msg("2333")
                         .errCode(22323)
-                                .build());
+                        .build());
     }
 
 
