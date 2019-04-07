@@ -176,3 +176,6 @@ gradle-app.setting
 # End of https://www.gitignore.io/api/macos,linux,gradle,windows,intellij+all
 
 src/main/resources/config/*
+
+dist/beacon/application-prod.yaml
+dist/beacon/beacon-*.jar
