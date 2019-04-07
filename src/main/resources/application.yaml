@@ -14,5 +14,8 @@ mybatis:
   configuration:
     map-underscore-to-camel-case: true
 
+
 logging:
   path: ./log/
+server:
+  port: 8090

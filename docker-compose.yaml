@@ -1,0 +1,25 @@
+version: '3'
+services:
+
+  web:
+    build:
+      context: dist/beacon/
+      dockerfile: Dockerfile
+    ports:
+      - "8090:8090"
+    container_name: beacon
+    links:
+      - redis
+      - db
+    depends_on:
+      - redis
+      - db
+
+  redis:
+    image: "redis:alpine"
+    container_name: beacon-redis
+  db:
+    build:
+      context: dist/sql/
+      dockerfile: Dockerfile
+    container_name: beacon-db
