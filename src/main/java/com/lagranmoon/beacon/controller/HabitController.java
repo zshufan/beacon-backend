@@ -34,8 +34,7 @@ public class HabitController {
     }
 
     @GetMapping("/habit/{id}")
-    public ResponseEntity getHabitDetail(@SessionAttribute("openId") String openId,
-                                         @PathVariable Long id) {
+    public ResponseEntity getHabitDetail(@PathVariable Long id) {
 
         HabitDetailDto habitDetail = habitService.getHabitDetailById(id);
 

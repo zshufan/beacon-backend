@@ -1,5 +1,6 @@
 package com.lagranmoon.beacon.service.impl;
 
+import com.lagranmoon.beacon.exception.ResourceNotFoundException;
 import com.lagranmoon.beacon.mapper.HabitMapper;
 import com.lagranmoon.beacon.model.HabitDetailDto;
 import com.lagranmoon.beacon.model.HabitDto;
@@ -10,13 +11,14 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 /**
  * @author Lagranmoon
  */
 @Service
-public class HabitMapperImpl implements HabitService {
+public class HabitServiceImpl implements HabitService {
 
     @Resource
     private HabitMapper habitMapper;
@@ -41,9 +43,18 @@ public class HabitMapperImpl implements HabitService {
     @Override
     public HabitDetailDto getHabitDetailById(Long id) {
 
+        Habit habit = habitMapper.getHabitById(id);
 
-
-        return null;
+        if (Objects.nonNull(habit)){
+            return HabitDetailDto.builder()
+                    .content(habit.getContent())
+                    .frequency(habit.getFrequency())
+                    .duration(habit.getDuration())
+                    .createTime(habit.getCreateTime())
+                    .build();
+        }else {
+            throw new ResourceNotFoundException(String.format("Habit %d doesn't exists",id));
+        }
     }
 
     @Override

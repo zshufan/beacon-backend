@@ -56,4 +56,11 @@
         WHERE tag.id IN (SELECT habit_tag.tag_id FROM habit_tag WHERE habit_tag.habit_id = #{habitId})
     </select>
 
+    <select id="getHabitById" parameterType="long" resultType="Habit">
+        SELECT content, frequency, duration, create_time
+        FROM habit
+        WHERE id = #{id}
+        LIMIT 1
+    </select>
+
 </mapper>

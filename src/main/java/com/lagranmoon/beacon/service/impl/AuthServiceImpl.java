@@ -22,11 +22,10 @@ import org.springframework.util.StringUtils;
 import org.springframework.web.client.RestTemplate;
 
 import javax.annotation.Resource;
+import java.lang.reflect.Array;
 import java.security.Key;
 import java.time.Duration;
-import java.util.Date;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 /**
  * @author Lagranmoon
@@ -118,8 +117,8 @@ public class AuthServiceImpl implements AuthService {
 
         MappingJackson2HttpMessageConverter mappingJackson2HttpMessageConverter
                 = new MappingJackson2HttpMessageConverter(objectMapper);
-        mappingJackson2HttpMessageConverter.setSupportedMediaTypes(List.of(MediaType.APPLICATION_JSON, MediaType.TEXT_PLAIN));
-        RestTemplate template = new RestTemplate(List.of(mappingJackson2HttpMessageConverter));
+        mappingJackson2HttpMessageConverter.setSupportedMediaTypes(Arrays.asList(MediaType.APPLICATION_JSON, MediaType.TEXT_PLAIN));
+        RestTemplate template = new RestTemplate(Collections.singletonList(mappingJackson2HttpMessageConverter));
 
         WechatAuthResp wechatResp;
         try {

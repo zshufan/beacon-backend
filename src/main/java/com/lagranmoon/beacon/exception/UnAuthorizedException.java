@@ -4,7 +4,7 @@ import lombok.Getter;
 
 /**
  * @author Lagranmoon
- * 微信授权失败抛出的异常
+ * 授权失败抛出的异常
  */
 public class UnAuthorizedException extends RuntimeException {
 

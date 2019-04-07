@@ -1,0 +1,385 @@
+2019-04-08 02:18:15.170  INFO 5759 --- [restartedMain] com.lagranmoon.beacon.BeaconApplication  : Starting BeaconApplication on manjaro with PID 5759 (/home/lagranmoon/Desktop/Project/Java/beacon-backend/out/production/classes started by lagranmoon in /home/lagranmoon/Desktop/Project/Java/beacon-backend)
+2019-04-08 02:18:15.172  INFO 5759 --- [restartedMain] com.lagranmoon.beacon.BeaconApplication  : The following profiles are active: dev
+2019-04-08 02:18:15.216  INFO 5759 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-04-08 02:18:15.216  INFO 5759 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-04-08 02:18:16.181  INFO 5759 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-04-08 02:18:16.183  INFO 5759 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-04-08 02:18:16.195  INFO 5759 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5ms. Found 0 repository interfaces.
+2019-04-08 02:18:16.472  INFO 5759 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$d0c1ea68] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-04-08 02:18:16.736  INFO 5759 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8090 (http)
+2019-04-08 02:18:16.756  INFO 5759 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-04-08 02:18:16.756  INFO 5759 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-04-08 02:18:16.761  INFO 5759 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib]
+2019-04-08 02:18:16.820  INFO 5759 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-04-08 02:18:16.821  INFO 5759 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1604 ms
+2019-04-08 02:18:17.712  INFO 5759 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-04-08 02:18:17.764  INFO 5759 --- [restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2019-04-08 02:18:17.852  INFO 5759 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-04-08 02:18:17.889  INFO 5759 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-04-08 02:18:18.128  INFO 5759 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2019-04-08 02:18:18.137  INFO 5759 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2019-04-08 02:18:18.158  INFO 5759 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2019-04-08 02:18:18.265  INFO 5759 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8090 (http) with context path ''
+2019-04-08 02:18:18.268  INFO 5759 --- [restartedMain] com.lagranmoon.beacon.BeaconApplication  : Started BeaconApplication in 3.433 seconds (JVM running for 4.102)
+2019-04-08 02:18:18.364  INFO 5759 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-04-08 02:18:18.366  INFO 5759 --- [RMI TCP Connection(1)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-04-08 02:18:18.367  INFO 5759 --- [RMI TCP Connection(1)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-04-08 02:18:18.377  INFO 5759 --- [RMI TCP Connection(1)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 10 ms
+2019-04-08 02:18:18.481  INFO 5759 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-04-08 02:18:18.685  INFO 5759 --- [RMI TCP Connection(2)-127.0.0.1] io.lettuce.core.EpollProvider            : Starting without optional epoll library
+2019-04-08 02:18:18.686  INFO 5759 --- [RMI TCP Connection(2)-127.0.0.1] io.lettuce.core.KqueueProvider           : Starting without optional kqueue library
+2019-04-08 02:18:57.984  INFO 5759 --- [Thread-6] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-04-08 02:18:59.100  INFO 5759 --- [Thread-6] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-04-08 02:18:59.106  INFO 5759 --- [Thread-6] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-04-08 02:18:59.184  INFO 5759 --- [restartedMain] com.lagranmoon.beacon.BeaconApplication  : Starting BeaconApplication on manjaro with PID 5759 (/home/lagranmoon/Desktop/Project/Java/beacon-backend/out/production/classes started by lagranmoon in /home/lagranmoon/Desktop/Project/Java/beacon-backend)
+2019-04-08 02:18:59.185  INFO 5759 --- [restartedMain] com.lagranmoon.beacon.BeaconApplication  : The following profiles are active: dev
+2019-04-08 02:18:59.517  INFO 5759 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-04-08 02:18:59.517  INFO 5759 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-04-08 02:18:59.520  INFO 5759 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 3ms. Found 0 repository interfaces.
+2019-04-08 02:18:59.559  INFO 5759 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$d0c1ea68] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-04-08 02:18:59.612  INFO 5759 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8090 (http)
+2019-04-08 02:18:59.614  INFO 5759 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-04-08 02:18:59.615  INFO 5759 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-04-08 02:18:59.625  INFO 5759 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-04-08 02:18:59.626  INFO 5759 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 440 ms
+2019-04-08 02:18:59.978  INFO 5759 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-04-08 02:19:00.005  INFO 5759 --- [restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2019-04-08 02:19:00.031  INFO 5759 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-04-08 02:19:00.040  INFO 5759 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-04-08 02:19:00.137  INFO 5759 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2019-04-08 02:19:00.138  INFO 5759 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2019-04-08 02:19:00.144  INFO 5759 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2019-04-08 02:19:00.176  INFO 5759 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8090 (http) with context path ''
+2019-04-08 02:19:00.176  INFO 5759 --- [restartedMain] com.lagranmoon.beacon.BeaconApplication  : Started BeaconApplication in 1.01 seconds (JVM running for 46.011)
+2019-04-08 02:19:00.182  INFO 5759 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2019-04-08 02:19:04.118  INFO 5759 --- [http-nio-8090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-04-08 02:19:04.119  INFO 5759 --- [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-04-08 02:19:04.123  INFO 5759 --- [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2019-04-08 02:22:27.973  INFO 5759 --- [Thread-15] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-04-08 02:22:28.111  INFO 5759 --- [restartedMain] com.lagranmoon.beacon.BeaconApplication  : Starting BeaconApplication on manjaro with PID 5759 (/home/lagranmoon/Desktop/Project/Java/beacon-backend/out/production/classes started by lagranmoon in /home/lagranmoon/Desktop/Project/Java/beacon-backend)
+2019-04-08 02:22:28.112  INFO 5759 --- [restartedMain] com.lagranmoon.beacon.BeaconApplication  : The following profiles are active: dev
+2019-04-08 02:22:28.469  INFO 5759 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-04-08 02:22:28.469  INFO 5759 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-04-08 02:22:28.472  INFO 5759 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 3ms. Found 0 repository interfaces.
+2019-04-08 02:22:28.516  INFO 5759 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$d0c1ea68] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-04-08 02:22:28.591  INFO 5759 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8090 (http)
+2019-04-08 02:22:28.594  INFO 5759 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-04-08 02:22:28.594  INFO 5759 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-04-08 02:22:28.605  INFO 5759 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-04-08 02:22:28.605  INFO 5759 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 491 ms
+2019-04-08 02:22:28.949  INFO 5759 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-04-08 02:22:29.119  INFO 5759 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-04-08 02:22:29.125  INFO 5759 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-04-08 02:22:29.161  INFO 5759 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8090 (http) with context path ''
+2019-04-08 02:22:29.162  INFO 5759 --- [restartedMain] com.lagranmoon.beacon.BeaconApplication  : Started BeaconApplication in 1.078 seconds (JVM running for 254.996)
+2019-04-08 02:22:29.165  INFO 5759 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2019-04-08 02:22:32.528  INFO 5759 --- [http-nio-8090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-04-08 02:22:32.529  INFO 5759 --- [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-04-08 02:22:32.533  INFO 5759 --- [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2019-04-08 02:41:38.484  INFO 5759 --- [Thread-23] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-04-08 02:41:38.560  INFO 5759 --- [restartedMain] com.lagranmoon.beacon.BeaconApplication  : Starting BeaconApplication on manjaro with PID 5759 (/home/lagranmoon/Desktop/Project/Java/beacon-backend/out/production/classes started by lagranmoon in /home/lagranmoon/Desktop/Project/Java/beacon-backend)
+2019-04-08 02:41:38.560  INFO 5759 --- [restartedMain] com.lagranmoon.beacon.BeaconApplication  : The following profiles are active: dev
+2019-04-08 02:41:38.957  INFO 5759 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-04-08 02:41:38.957  INFO 5759 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-04-08 02:41:38.960  INFO 5759 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 3ms. Found 0 repository interfaces.
+2019-04-08 02:41:39.013  INFO 5759 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$d0c1ea68] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-04-08 02:41:39.068  INFO 5759 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8090 (http)
+2019-04-08 02:41:39.070  INFO 5759 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-04-08 02:41:39.070  INFO 5759 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-04-08 02:41:39.078  INFO 5759 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-04-08 02:41:39.078  INFO 5759 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 517 ms
+2019-04-08 02:41:39.550  INFO 5759 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-04-08 02:41:39.590  INFO 5759 --- [restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2019-04-08 02:41:39.626  INFO 5759 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-04-08 02:41:39.637  INFO 5759 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-04-08 02:41:39.732  INFO 5759 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2019-04-08 02:41:39.733  INFO 5759 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2019-04-08 02:41:39.738  INFO 5759 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2019-04-08 02:41:39.768  INFO 5759 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8090 (http) with context path ''
+2019-04-08 02:41:39.769  INFO 5759 --- [restartedMain] com.lagranmoon.beacon.BeaconApplication  : Started BeaconApplication in 1.225 seconds (JVM running for 1405.603)
+2019-04-08 02:41:39.774  INFO 5759 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation delta:
+
+
+==========================
+CONDITION EVALUATION DELTA
+==========================
+
+
+Positive matches:
+-----------------
+
+   Swagger2DocumentationConfiguration matched:
+      - @ConditionalOnWebApplication (required) found 'session' scope (OnWebApplicationCondition)
+
+
+Negative matches:
+-----------------
+
+    None
+
+
+Exclusions:
+-----------
+
+    None
+
+
+Unconditional classes:
+----------------------
+
+    None
+
+
+
+2019-04-08 02:41:51.995  INFO 5759 --- [http-nio-8090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-04-08 02:41:51.996  INFO 5759 --- [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-04-08 02:41:52.000  INFO 5759 --- [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2019-04-08 02:42:15.595  INFO 5759 --- [Thread-31] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-04-08 02:42:15.669  INFO 5759 --- [restartedMain] com.lagranmoon.beacon.BeaconApplication  : Starting BeaconApplication on manjaro with PID 5759 (/home/lagranmoon/Desktop/Project/Java/beacon-backend/out/production/classes started by lagranmoon in /home/lagranmoon/Desktop/Project/Java/beacon-backend)
+2019-04-08 02:42:15.669  INFO 5759 --- [restartedMain] com.lagranmoon.beacon.BeaconApplication  : The following profiles are active: dev
+2019-04-08 02:42:15.981  INFO 5759 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-04-08 02:42:15.982  INFO 5759 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-04-08 02:42:15.984  INFO 5759 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2ms. Found 0 repository interfaces.
+2019-04-08 02:42:16.041  INFO 5759 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$d0c1ea68] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-04-08 02:42:16.101  INFO 5759 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8090 (http)
+2019-04-08 02:42:16.102  INFO 5759 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-04-08 02:42:16.102  INFO 5759 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-04-08 02:42:16.108  INFO 5759 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-04-08 02:42:16.108  INFO 5759 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 438 ms
+2019-04-08 02:42:16.502  INFO 5759 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-04-08 02:42:16.541  INFO 5759 --- [restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2019-04-08 02:42:16.578  INFO 5759 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-04-08 02:42:16.595  INFO 5759 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-04-08 02:42:16.721  INFO 5759 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2019-04-08 02:42:16.723  INFO 5759 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2019-04-08 02:42:16.729  INFO 5759 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2019-04-08 02:42:16.780  INFO 5759 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8090 (http) with context path ''
+2019-04-08 02:42:16.781  INFO 5759 --- [restartedMain] com.lagranmoon.beacon.BeaconApplication  : Started BeaconApplication in 1.126 seconds (JVM running for 1442.615)
+2019-04-08 02:42:16.786  INFO 5759 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2019-04-08 02:42:20.468  INFO 5759 --- [http-nio-8090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-04-08 02:42:20.468  INFO 5759 --- [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-04-08 02:42:20.473  INFO 5759 --- [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2019-04-08 02:45:54.570  INFO 5759 --- [Thread-39] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-04-08 02:45:54.690  INFO 5759 --- [restartedMain] com.lagranmoon.beacon.BeaconApplication  : Starting BeaconApplication on manjaro with PID 5759 (/home/lagranmoon/Desktop/Project/Java/beacon-backend/out/production/classes started by lagranmoon in /home/lagranmoon/Desktop/Project/Java/beacon-backend)
+2019-04-08 02:45:54.690  INFO 5759 --- [restartedMain] com.lagranmoon.beacon.BeaconApplication  : The following profiles are active: dev
+2019-04-08 02:45:55.030  INFO 5759 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-04-08 02:45:55.031  INFO 5759 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-04-08 02:45:55.034  INFO 5759 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 3ms. Found 0 repository interfaces.
+2019-04-08 02:45:55.086  INFO 5759 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$d0c1ea68] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-04-08 02:45:55.152  INFO 5759 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8090 (http)
+2019-04-08 02:45:55.154  INFO 5759 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-04-08 02:45:55.154  INFO 5759 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-04-08 02:45:55.161  INFO 5759 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-04-08 02:45:55.161  INFO 5759 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 470 ms
+2019-04-08 02:45:55.635  INFO 5759 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-04-08 02:45:55.685  INFO 5759 --- [restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2019-04-08 02:45:55.735  INFO 5759 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-04-08 02:45:55.752  INFO 5759 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-04-08 02:45:55.867  INFO 5759 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2019-04-08 02:45:55.868  INFO 5759 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2019-04-08 02:45:55.874  INFO 5759 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2019-04-08 02:45:55.912  INFO 5759 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8090 (http) with context path ''
+2019-04-08 02:45:55.913  INFO 5759 --- [restartedMain] com.lagranmoon.beacon.BeaconApplication  : Started BeaconApplication in 1.245 seconds (JVM running for 1661.748)
+2019-04-08 02:45:55.918  INFO 5759 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2019-04-08 02:45:58.352  INFO 5759 --- [http-nio-8090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-04-08 02:45:58.352  INFO 5759 --- [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-04-08 02:45:58.358  INFO 5759 --- [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
+2019-04-08 02:51:13.395  INFO 5759 --- [Thread-47] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-04-08 02:51:13.483  INFO 5759 --- [restartedMain] com.lagranmoon.beacon.BeaconApplication  : Starting BeaconApplication on manjaro with PID 5759 (/home/lagranmoon/Desktop/Project/Java/beacon-backend/out/production/classes started by lagranmoon in /home/lagranmoon/Desktop/Project/Java/beacon-backend)
+2019-04-08 02:51:13.483  INFO 5759 --- [restartedMain] com.lagranmoon.beacon.BeaconApplication  : The following profiles are active: dev
+2019-04-08 02:51:13.784  INFO 5759 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-04-08 02:51:13.784  INFO 5759 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-04-08 02:51:13.786  INFO 5759 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2ms. Found 0 repository interfaces.
+2019-04-08 02:51:13.819  INFO 5759 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$d0c1ea68] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-04-08 02:51:13.862  INFO 5759 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8090 (http)
+2019-04-08 02:51:13.863  INFO 5759 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-04-08 02:51:13.863  INFO 5759 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-04-08 02:51:13.869  INFO 5759 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-04-08 02:51:13.869  INFO 5759 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 385 ms
+2019-04-08 02:51:14.198  INFO 5759 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-04-08 02:51:14.221  INFO 5759 --- [restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2019-04-08 02:51:14.253  INFO 5759 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-04-08 02:51:14.262  INFO 5759 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-04-08 02:51:14.354  INFO 5759 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2019-04-08 02:51:14.355  INFO 5759 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2019-04-08 02:51:14.359  INFO 5759 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2019-04-08 02:51:14.386  INFO 5759 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8090 (http) with context path ''
+2019-04-08 02:51:14.387  INFO 5759 --- [restartedMain] com.lagranmoon.beacon.BeaconApplication  : Started BeaconApplication in 0.917 seconds (JVM running for 1980.221)
+2019-04-08 02:51:14.390  INFO 5759 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2019-04-08 02:51:20.521  INFO 5759 --- [http-nio-8090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-04-08 02:51:20.522  INFO 5759 --- [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-04-08 02:51:20.526  INFO 5759 --- [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2019-04-08 02:51:38.934  WARN 5759 --- [http-nio-8090-exec-7] s.d.swagger2.web.Swagger2Controller      : Unable to find specification for group restful-api
+2019-04-08 02:52:16.883  INFO 5759 --- [Thread-55] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-04-08 02:52:17.019  INFO 5759 --- [restartedMain] com.lagranmoon.beacon.BeaconApplication  : Starting BeaconApplication on manjaro with PID 5759 (/home/lagranmoon/Desktop/Project/Java/beacon-backend/out/production/classes started by lagranmoon in /home/lagranmoon/Desktop/Project/Java/beacon-backend)
+2019-04-08 02:52:17.019  INFO 5759 --- [restartedMain] com.lagranmoon.beacon.BeaconApplication  : The following profiles are active: dev
+2019-04-08 02:52:17.403  INFO 5759 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-04-08 02:52:17.403  INFO 5759 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-04-08 02:52:17.405  INFO 5759 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2ms. Found 0 repository interfaces.
+2019-04-08 02:52:17.439  INFO 5759 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$d0c1ea68] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-04-08 02:52:17.493  INFO 5759 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8090 (http)
+2019-04-08 02:52:17.494  INFO 5759 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-04-08 02:52:17.494  INFO 5759 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-04-08 02:52:17.500  INFO 5759 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-04-08 02:52:17.500  INFO 5759 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 479 ms
+2019-04-08 02:52:17.802  INFO 5759 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-04-08 02:52:17.826  INFO 5759 --- [restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2019-04-08 02:52:17.851  INFO 5759 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-04-08 02:52:17.860  INFO 5759 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-04-08 02:52:17.948  INFO 5759 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2019-04-08 02:52:17.949  INFO 5759 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2019-04-08 02:52:17.953  INFO 5759 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2019-04-08 02:52:17.996  INFO 5759 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8090 (http) with context path ''
+2019-04-08 02:52:17.997  INFO 5759 --- [restartedMain] com.lagranmoon.beacon.BeaconApplication  : Started BeaconApplication in 1.004 seconds (JVM running for 2043.831)
+2019-04-08 02:52:18.000  INFO 5759 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2019-04-08 02:52:20.042  INFO 5759 --- [http-nio-8090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-04-08 02:52:20.043  INFO 5759 --- [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-04-08 02:52:20.047  INFO 5759 --- [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2019-04-08 02:52:20.281  WARN 5759 --- [http-nio-8090-exec-1] s.d.swagger2.web.Swagger2Controller      : Unable to find specification for group restful-api
+2019-04-08 02:52:21.127  WARN 5759 --- [http-nio-8090-exec-3] s.d.swagger2.web.Swagger2Controller      : Unable to find specification for group restful-api
+2019-04-08 02:52:21.884  WARN 5759 --- [http-nio-8090-exec-5] s.d.swagger2.web.Swagger2Controller      : Unable to find specification for group restful-api
+2019-04-08 02:52:22.470  WARN 5759 --- [http-nio-8090-exec-7] s.d.swagger2.web.Swagger2Controller      : Unable to find specification for group restful-api
+2019-04-08 02:52:22.709  WARN 5759 --- [http-nio-8090-exec-9] s.d.swagger2.web.Swagger2Controller      : Unable to find specification for group restful-api
+2019-04-08 02:52:22.959  WARN 5759 --- [http-nio-8090-exec-1] s.d.swagger2.web.Swagger2Controller      : Unable to find specification for group restful-api
+2019-04-08 02:52:23.214  WARN 5759 --- [http-nio-8090-exec-3] s.d.swagger2.web.Swagger2Controller      : Unable to find specification for group restful-api
+2019-04-08 02:52:23.460  WARN 5759 --- [http-nio-8090-exec-6] s.d.swagger2.web.Swagger2Controller      : Unable to find specification for group restful-api
+2019-04-08 02:52:23.642  WARN 5759 --- [http-nio-8090-exec-7] s.d.swagger2.web.Swagger2Controller      : Unable to find specification for group restful-api
+2019-04-08 02:52:23.886  WARN 5759 --- [http-nio-8090-exec-9] s.d.swagger2.web.Swagger2Controller      : Unable to find specification for group restful-api
+2019-04-08 02:52:24.190  WARN 5759 --- [http-nio-8090-exec-1] s.d.swagger2.web.Swagger2Controller      : Unable to find specification for group restful-api
+2019-04-08 02:53:31.883  WARN 5759 --- [http-nio-8090-exec-6] s.d.swagger2.web.Swagger2Controller      : Unable to find specification for group restful-api
+2019-04-08 02:53:58.003  INFO 5759 --- [Thread-70] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-04-08 02:54:00.373  INFO 9048 --- [restartedMain] com.lagranmoon.beacon.BeaconApplication  : Starting BeaconApplication on manjaro with PID 9048 (/home/lagranmoon/Desktop/Project/Java/beacon-backend/out/production/classes started by lagranmoon in /home/lagranmoon/Desktop/Project/Java/beacon-backend)
+2019-04-08 02:54:00.375  INFO 9048 --- [restartedMain] com.lagranmoon.beacon.BeaconApplication  : The following profiles are active: dev
+2019-04-08 02:54:00.413  INFO 9048 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-04-08 02:54:00.413  INFO 9048 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-04-08 02:54:01.440  INFO 9048 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-04-08 02:54:01.441  INFO 9048 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-04-08 02:54:01.454  INFO 9048 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6ms. Found 0 repository interfaces.
+2019-04-08 02:54:01.747  INFO 9048 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$6195451a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-04-08 02:54:02.003  INFO 9048 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8090 (http)
+2019-04-08 02:54:02.022  INFO 9048 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-04-08 02:54:02.022  INFO 9048 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-04-08 02:54:02.031  INFO 9048 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib]
+2019-04-08 02:54:02.086  INFO 9048 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-04-08 02:54:02.086  INFO 9048 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1672 ms
+2019-04-08 02:54:02.928  INFO 9048 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-04-08 02:54:02.980  INFO 9048 --- [restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2019-04-08 02:54:03.055  INFO 9048 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-04-08 02:54:03.092  INFO 9048 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-04-08 02:54:03.353  INFO 9048 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2019-04-08 02:54:03.362  INFO 9048 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2019-04-08 02:54:03.416  INFO 9048 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2019-04-08 02:54:03.627  INFO 9048 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8090 (http) with context path ''
+2019-04-08 02:54:03.632  INFO 9048 --- [restartedMain] com.lagranmoon.beacon.BeaconApplication  : Started BeaconApplication in 3.571 seconds (JVM running for 4.152)
+2019-04-08 02:54:03.922  INFO 9048 --- [RMI TCP Connection(3)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-04-08 02:54:03.924  INFO 9048 --- [RMI TCP Connection(4)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-04-08 02:54:03.924  INFO 9048 --- [RMI TCP Connection(4)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-04-08 02:54:03.932  INFO 9048 --- [RMI TCP Connection(4)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 8 ms
+2019-04-08 02:54:03.996  INFO 9048 --- [RMI TCP Connection(3)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-04-08 02:54:04.123  INFO 9048 --- [RMI TCP Connection(3)-127.0.0.1] io.lettuce.core.EpollProvider            : Starting without optional epoll library
+2019-04-08 02:54:04.124  INFO 9048 --- [RMI TCP Connection(3)-127.0.0.1] io.lettuce.core.KqueueProvider           : Starting without optional kqueue library
+2019-04-08 02:54:47.323  WARN 9048 --- [http-nio-8090-exec-3] s.d.swagger2.web.Swagger2Controller      : Unable to find specification for group restful-api
+2019-04-08 02:55:43.287  INFO 9048 --- [Thread-10] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-04-08 02:55:44.407  INFO 9048 --- [Thread-10] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-04-08 02:55:44.411  INFO 9048 --- [Thread-10] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-04-08 02:55:48.857  INFO 9370 --- [restartedMain] com.lagranmoon.beacon.BeaconApplication  : Starting BeaconApplication on manjaro with PID 9370 (/home/lagranmoon/Desktop/Project/Java/beacon-backend/out/production/classes started by lagranmoon in /home/lagranmoon/Desktop/Project/Java/beacon-backend)
+2019-04-08 02:55:48.859  INFO 9370 --- [restartedMain] com.lagranmoon.beacon.BeaconApplication  : The following profiles are active: dev
+2019-04-08 02:55:48.897  INFO 9370 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-04-08 02:55:48.897  INFO 9370 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-04-08 02:55:49.880  INFO 9370 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-04-08 02:55:49.881  INFO 9370 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-04-08 02:55:49.895  INFO 9370 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6ms. Found 0 repository interfaces.
+2019-04-08 02:55:50.180  INFO 9370 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$711143d6] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-04-08 02:55:50.438  INFO 9370 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8090 (http)
+2019-04-08 02:55:50.456  INFO 9370 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-04-08 02:55:50.457  INFO 9370 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-04-08 02:55:50.462  INFO 9370 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib]
+2019-04-08 02:55:50.515  INFO 9370 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-04-08 02:55:50.515  INFO 9370 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1617 ms
+2019-04-08 02:55:51.340  INFO 9370 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-04-08 02:55:51.390  INFO 9370 --- [restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2019-04-08 02:55:51.454  INFO 9370 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-04-08 02:55:51.485  INFO 9370 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-04-08 02:55:51.738  INFO 9370 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2019-04-08 02:55:51.747  INFO 9370 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2019-04-08 02:55:51.769  INFO 9370 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2019-04-08 02:55:51.878  INFO 9370 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8090 (http) with context path ''
+2019-04-08 02:55:51.881  INFO 9370 --- [restartedMain] com.lagranmoon.beacon.BeaconApplication  : Started BeaconApplication in 3.366 seconds (JVM running for 3.907)
+2019-04-08 02:55:52.318  INFO 9370 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-04-08 02:55:52.323  INFO 9370 --- [RMI TCP Connection(1)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-04-08 02:55:52.323  INFO 9370 --- [RMI TCP Connection(1)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-04-08 02:55:52.333  INFO 9370 --- [RMI TCP Connection(1)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 10 ms
+2019-04-08 02:55:52.384  INFO 9370 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-04-08 02:55:52.503  INFO 9370 --- [RMI TCP Connection(2)-127.0.0.1] io.lettuce.core.EpollProvider            : Starting without optional epoll library
+2019-04-08 02:55:52.504  INFO 9370 --- [RMI TCP Connection(2)-127.0.0.1] io.lettuce.core.KqueueProvider           : Starting without optional kqueue library
+2019-04-08 02:55:58.291  WARN 9370 --- [http-nio-8090-exec-1] s.d.swagger2.web.Swagger2Controller      : Unable to find specification for group restful-api
+2019-04-08 02:55:59.365  WARN 9370 --- [http-nio-8090-exec-3] s.d.swagger2.web.Swagger2Controller      : Unable to find specification for group restful-api
+2019-04-08 02:56:27.010  INFO 9370 --- [Thread-10] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-04-08 02:56:28.123  INFO 9370 --- [Thread-10] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-04-08 02:56:28.126  INFO 9370 --- [Thread-10] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-04-08 02:56:31.391  INFO 9604 --- [restartedMain] com.lagranmoon.beacon.BeaconApplication  : Starting BeaconApplication on manjaro with PID 9604 (/home/lagranmoon/Desktop/Project/Java/beacon-backend/out/production/classes started by lagranmoon in /home/lagranmoon/Desktop/Project/Java/beacon-backend)
+2019-04-08 02:56:31.393  INFO 9604 --- [restartedMain] com.lagranmoon.beacon.BeaconApplication  : The following profiles are active: dev
+2019-04-08 02:56:31.434  INFO 9604 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-04-08 02:56:31.434  INFO 9604 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-04-08 02:56:32.348  INFO 9604 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-04-08 02:56:32.349  INFO 9604 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-04-08 02:56:32.362  INFO 9604 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5ms. Found 0 repository interfaces.
+2019-04-08 02:56:32.644  INFO 9604 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$9cf51d29] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-04-08 02:56:32.906  INFO 9604 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8090 (http)
+2019-04-08 02:56:32.924  INFO 9604 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-04-08 02:56:32.925  INFO 9604 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-04-08 02:56:32.931  INFO 9604 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib]
+2019-04-08 02:56:32.986  INFO 9604 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-04-08 02:56:32.986  INFO 9604 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1551 ms
+2019-04-08 02:56:33.938  INFO 9604 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-04-08 02:56:34.037  INFO 9604 --- [restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2019-04-08 02:56:34.179  INFO 9604 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-04-08 02:56:34.239  INFO 9604 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-04-08 02:56:34.528  INFO 9604 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2019-04-08 02:56:34.538  INFO 9604 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2019-04-08 02:56:34.558  INFO 9604 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2019-04-08 02:56:34.665  INFO 9604 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8090 (http) with context path ''
+2019-04-08 02:56:34.668  INFO 9604 --- [restartedMain] com.lagranmoon.beacon.BeaconApplication  : Started BeaconApplication in 3.611 seconds (JVM running for 4.239)
+2019-04-08 02:56:34.787  INFO 9604 --- [RMI TCP Connection(4)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-04-08 02:56:34.800  INFO 9604 --- [RMI TCP Connection(3)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-04-08 02:56:34.801  INFO 9604 --- [RMI TCP Connection(3)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-04-08 02:56:34.813  INFO 9604 --- [RMI TCP Connection(3)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 12 ms
+2019-04-08 02:56:34.875  INFO 9604 --- [RMI TCP Connection(4)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-04-08 02:56:35.016  INFO 9604 --- [RMI TCP Connection(4)-127.0.0.1] io.lettuce.core.EpollProvider            : Starting without optional epoll library
+2019-04-08 02:56:35.016  INFO 9604 --- [RMI TCP Connection(4)-127.0.0.1] io.lettuce.core.KqueueProvider           : Starting without optional kqueue library
+2019-04-08 02:56:45.702  INFO 9604 --- [Thread-10] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-04-08 02:56:46.822  INFO 9604 --- [Thread-10] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-04-08 02:56:46.827  INFO 9604 --- [Thread-10] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-04-08 02:56:50.032  INFO 9782 --- [restartedMain] com.lagranmoon.beacon.BeaconApplication  : Starting BeaconApplication on manjaro with PID 9782 (/home/lagranmoon/Desktop/Project/Java/beacon-backend/out/production/classes started by lagranmoon in /home/lagranmoon/Desktop/Project/Java/beacon-backend)
+2019-04-08 02:56:50.035  INFO 9782 --- [restartedMain] com.lagranmoon.beacon.BeaconApplication  : The following profiles are active: dev
+2019-04-08 02:56:50.074  INFO 9782 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-04-08 02:56:50.075  INFO 9782 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-04-08 02:56:51.087  INFO 9782 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-04-08 02:56:51.089  INFO 9782 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-04-08 02:56:51.103  INFO 9782 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6ms. Found 0 repository interfaces.
+2019-04-08 02:56:51.405  INFO 9782 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$bdab75a5] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-04-08 02:56:51.694  INFO 9782 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8090 (http)
+2019-04-08 02:56:51.726  INFO 9782 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-04-08 02:56:51.727  INFO 9782 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-04-08 02:56:51.735  INFO 9782 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib]
+2019-04-08 02:56:51.797  INFO 9782 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-04-08 02:56:51.797  INFO 9782 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1722 ms
+2019-04-08 02:56:52.682  INFO 9782 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-04-08 02:56:52.737  INFO 9782 --- [restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2019-04-08 02:56:52.818  INFO 9782 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-04-08 02:56:52.847  INFO 9782 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-04-08 02:56:53.093  INFO 9782 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2019-04-08 02:56:53.102  INFO 9782 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2019-04-08 02:56:53.123  INFO 9782 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2019-04-08 02:56:53.260  INFO 9782 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8090 (http) with context path ''
+2019-04-08 02:56:53.263  INFO 9782 --- [restartedMain] com.lagranmoon.beacon.BeaconApplication  : Started BeaconApplication in 3.543 seconds (JVM running for 4.124)
+2019-04-08 02:56:53.512  INFO 9782 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-04-08 02:56:53.520  INFO 9782 --- [RMI TCP Connection(1)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-04-08 02:56:53.521  INFO 9782 --- [RMI TCP Connection(1)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-04-08 02:56:53.531  INFO 9782 --- [RMI TCP Connection(1)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 9 ms
+2019-04-08 02:56:53.583  INFO 9782 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-04-08 02:56:53.744  INFO 9782 --- [RMI TCP Connection(2)-127.0.0.1] io.lettuce.core.EpollProvider            : Starting without optional epoll library
+2019-04-08 02:56:53.745  INFO 9782 --- [RMI TCP Connection(2)-127.0.0.1] io.lettuce.core.KqueueProvider           : Starting without optional kqueue library
+2019-04-08 02:57:31.562  INFO 9782 --- [Thread-10] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-04-08 02:57:32.683  INFO 9782 --- [Thread-10] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-04-08 02:57:32.690  INFO 9782 --- [Thread-10] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

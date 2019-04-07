@@ -20,6 +20,8 @@ public interface HabitMapper {
      */
     List<Habit> getHabitByOpenId(String openId);
 
+    Habit getHabitById(Long id);
+
     /**
      * 根据Habit ID获取其所有的Tag
      * @param habitId Habit Id

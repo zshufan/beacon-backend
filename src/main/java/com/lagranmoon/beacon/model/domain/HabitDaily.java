@@ -6,5 +6,5 @@ import lombok.Data;
  * @author Lagranmoon
  */
 @Data
-public class HabitDetail {
+public class HabitDaily {
 }

@@ -4,6 +4,8 @@ import com.lagranmoon.beacon.model.AuthDto;
 import com.lagranmoon.beacon.model.AuthRequestDto;
 import com.lagranmoon.beacon.model.ResponseDto;
 import com.lagranmoon.beacon.service.AuthService;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -25,6 +27,8 @@ public class AuthController {
     private AuthService authService;
 
     @PostMapping
+    @ApiOperation(value = "身份认证",notes = "根据request code向微信服务器请求并将用户信息存入数据库")
+    @ApiImplicitParam(name = "requestDto",value = "用户认证实体类",dataType = "AuthRequestDto",required = true)
     public ResponseEntity auth(@RequestBody @Valid AuthRequestDto requestDto) {
 
 //        AuthDto response = authService.auth(requestDto.getCode(), requestDto.getNickName());
