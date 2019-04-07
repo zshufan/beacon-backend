@@ -1,58 +1,43 @@
 package com.lagranmoon.beacon.service.impl;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.lagranmoon.beacon.exception.UnAuthorizedException;
 import com.lagranmoon.beacon.mapper.AuthMapper;
 import com.lagranmoon.beacon.model.AuthDto;
 import com.lagranmoon.beacon.model.WechatAuthResp;
 import com.lagranmoon.beacon.model.domain.UserAuth;
 import com.lagranmoon.beacon.service.AuthService;
+import com.lagranmoon.beacon.service.WechatService;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.security.Keys;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.PropertySource;
-import org.springframework.data.redis.core.RedisTemplate;
-import org.springframework.http.MediaType;
-import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
+import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Base64Utils;
 import org.springframework.util.StringUtils;
-import org.springframework.web.client.RestTemplate;
 
 import javax.annotation.Resource;
-import java.lang.reflect.Array;
 import java.security.Key;
 import java.time.Duration;
-import java.util.*;
+import java.util.Date;
+import java.util.Objects;
 
 /**
  * @author Lagranmoon
  */
 @Slf4j
 @Service
-@PropertySource(value = "classpath:config/wechat.properties")
 public class AuthServiceImpl implements AuthService {
 
-
-    @Value("${app_id}")
-    private String appId;
-
-    @Value("${auth_url}")
-    private String authUrl;
-
-    @Value("${app_secret}")
-    private String appSecret;
 
     @Resource
     private AuthMapper authMapper;
 
     @Resource
-    private RedisTemplate redisTemplate;
+    private ValueOperations redisTemplate;
 
     @Resource
-    private ObjectMapper objectMapper;
+    private WechatService wechatService;
 
     @Override
     @SuppressWarnings("unchecked")
@@ -60,7 +45,7 @@ public class AuthServiceImpl implements AuthService {
 
         log.debug(code);
 
-        WechatAuthResp resp = code2Session(code);
+        WechatAuthResp resp = wechatService.code2Session(code);
 
         log.debug(resp.toString());
 
@@ -85,7 +70,7 @@ public class AuthServiceImpl implements AuthService {
                 .setExpiration(new Date(System.currentTimeMillis()+3*24*3600))
                 .compact();
 
-        redisTemplate.opsForValue().set(token,
+        redisTemplate.set(token,
                 Base64Utils.encodeToString(key.getEncoded()), Duration.ofDays(3));
 
 
@@ -96,7 +81,7 @@ public class AuthServiceImpl implements AuthService {
     public String verify(String token) {
         try {
 
-            String key = (String) redisTemplate.opsForValue().get(token);
+            String key = (String) redisTemplate.get(token);
             Objects.requireNonNull(key);
 
 
@@ -111,26 +96,6 @@ public class AuthServiceImpl implements AuthService {
             log.info("{} is invalid", token);
             return "";
         }
-    }
-
-    private WechatAuthResp code2Session(String code){
-
-        MappingJackson2HttpMessageConverter mappingJackson2HttpMessageConverter
-                = new MappingJackson2HttpMessageConverter(objectMapper);
-        mappingJackson2HttpMessageConverter.setSupportedMediaTypes(Arrays.asList(MediaType.APPLICATION_JSON, MediaType.TEXT_PLAIN));
-        RestTemplate template = new RestTemplate(Collections.singletonList(mappingJackson2HttpMessageConverter));
-
-        WechatAuthResp wechatResp;
-        try {
-            wechatResp =
-                    template.getForObject(authUrl, WechatAuthResp.class, appId, appSecret, code);
-            Objects.requireNonNull(wechatResp);
-        } catch (Exception e) {
-            log.debug(e.getLocalizedMessage());
-            throw new UnAuthorizedException("连接微信服务器失败");
-        }
-
-        return wechatResp;
     }
 
 
