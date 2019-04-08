@@ -29,7 +29,7 @@ buildProject(){
     
     cp build/libs/beacon-*jar dist/beacon/beacon-latest.jar;
     cp src/main/resources/application-dev.yaml dist/beacon/application-prod.yaml;
-    docker-compose up -d
+    docker-compose up -d --force-recreate
 }
 
 checkEnv;
