@@ -46,8 +46,6 @@ public class AuthServiceImplTest {
     @Transactional
     public void testAuth(){
         String userName = "vbvidefw";
-        AuthDto authDto = authService.auth("vjnksf",userName);
-        assertThat(authDto,notNullValue());
     }
 
 }

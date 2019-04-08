@@ -1,6 +1,7 @@
 package com.lagranmoon.beacon.service;
 
 import com.lagranmoon.beacon.model.AuthDto;
+import com.lagranmoon.beacon.model.AuthRequestDto;
 
 /**
  * @author Lagranmoon
@@ -10,11 +11,9 @@ public interface AuthService {
 
     /**
      * 根据request code从微信服务器获取openID
-     * @param code request code
-     * @param userName 用户名
      * @return 返回自定义登录态（JWT Token）和UID
      */
-    AuthDto auth(String code, String userName);
+    AuthDto auth(AuthRequestDto requestDto);
 
     /**
      * 判断Token是否为有效的Token

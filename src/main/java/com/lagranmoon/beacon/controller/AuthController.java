@@ -4,9 +4,6 @@ import com.lagranmoon.beacon.model.AuthDto;
 import com.lagranmoon.beacon.model.AuthRequestDto;
 import com.lagranmoon.beacon.model.ResponseDto;
 import com.lagranmoon.beacon.service.AuthService;
-import io.swagger.annotations.ApiImplicitParam;
-import io.swagger.annotations.ApiOperation;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -30,7 +27,7 @@ public class AuthController {
     @PostMapping
     public ResponseEntity auth(@RequestBody @Valid AuthRequestDto requestDto) {
 
-        AuthDto response = authService.auth(requestDto.getCode(), requestDto.getNickName());
+        AuthDto response = authService.auth(requestDto);
         return ResponseEntity
                 .ok(ResponseDto.builder()
                         .data(response)

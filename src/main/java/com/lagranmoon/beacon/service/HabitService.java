@@ -15,6 +15,6 @@ public interface HabitService {
 
     HabitDetailDto getHabitDetailById(Long id);
 
-    void saveHabit(HabitRequest habitRequest);
+    void saveHabit(HabitRequest habitRequest,String openId);
 
 }

@@ -10,6 +10,7 @@ import com.lagranmoon.beacon.service.HabitService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
@@ -45,20 +46,38 @@ public class HabitServiceImpl implements HabitService {
 
         Habit habit = habitMapper.getHabitById(id);
 
-        if (Objects.nonNull(habit)){
+        if (Objects.nonNull(habit)) {
             return HabitDetailDto.builder()
                     .content(habit.getContent())
                     .frequency(habit.getFrequency())
                     .duration(habit.getDuration())
                     .createTime(habit.getCreateTime())
                     .build();
-        }else {
-            throw new ResourceNotFoundException(String.format("Habit %d doesn't exists",id));
+        } else {
+            throw new ResourceNotFoundException(String.format("Habit %d doesn't exists", id));
         }
     }
 
     @Override
-    public void saveHabit(HabitRequest habitRequest) {
+    public void saveHabit(HabitRequest habitRequest, String openId) {
+        String content = habitRequest.getContent();
+        if (Objects.isNull(content)) {
+            content = "";
+        }
+        Habit habit = new Habit();
+        habit.setTitle(habitRequest.getTitle());
+        habit.setContent(content);
+        habit.setFrequency(habitRequest.getFrequency());
+        habit.setDuration(habitRequest.getDuration());
+        habit.setOpenId(openId);
+        habit.setCreateTime(new Date());
 
+        habitMapper.insertHabit(habit);
+
+        if (Objects.nonNull(habitRequest.getTagList())) {
+            List<Long> tagIdList =
+                    habitMapper.getTagIdsByName(habitRequest.getTagList());
+            habitMapper.insertHabitTags(habit.getId(), tagIdList);
+        }
     }
 }

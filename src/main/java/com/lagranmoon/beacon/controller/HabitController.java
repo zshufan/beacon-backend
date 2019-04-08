@@ -46,8 +46,9 @@ public class HabitController {
     }
 
     @PostMapping("/habit")
-    public ResponseEntity saveHabit(@RequestBody @Valid HabitRequest habitRequest) {
-        habitService.saveHabit(habitRequest);
+    public ResponseEntity saveHabit(@RequestBody @Valid HabitRequest habitRequest
+            ,@RequestAttribute("openId") String openId) {
+        habitService.saveHabit(habitRequest,openId);
         return ResponseEntity.ok(
                 ResponseDto.builder()
                         .msg("success")

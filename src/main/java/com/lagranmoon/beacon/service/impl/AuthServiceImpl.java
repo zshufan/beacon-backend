@@ -3,6 +3,7 @@ package com.lagranmoon.beacon.service.impl;
 import com.lagranmoon.beacon.exception.UnAuthorizedException;
 import com.lagranmoon.beacon.mapper.AuthMapper;
 import com.lagranmoon.beacon.model.AuthDto;
+import com.lagranmoon.beacon.model.AuthRequestDto;
 import com.lagranmoon.beacon.model.WechatAuthResp;
 import com.lagranmoon.beacon.model.domain.UserAuth;
 import com.lagranmoon.beacon.service.AuthService;
@@ -41,16 +42,16 @@ public class AuthServiceImpl implements AuthService {
 
     @Override
     @SuppressWarnings("unchecked")
-    public AuthDto auth(String code, String userName) {
+    public AuthDto auth(AuthRequestDto requestDto) {
 
-        log.debug(code);
+        log.debug(requestDto.getCode());
 
-        WechatAuthResp resp = wechatService.code2Session(code);
+//        WechatAuthResp resp = wechatService.code2Session(code);
 
-//        WechatAuthResp resp =  WechatAuthResp.builder()
-//                .openId("hsdjfhsfhiw")
-//                .sessionKey("reiunjsdbnsffw")
-//                .build();
+        WechatAuthResp resp =  WechatAuthResp.builder()
+                .openId("hsdjfhsfhiw")
+                .sessionKey("reiunjsdbnsffw")
+                .build();
 
         log.debug(resp.toString());
 
@@ -60,19 +61,26 @@ public class AuthServiceImpl implements AuthService {
 
         UserAuth userAuth = UserAuth
                 .builder()
-                .userName(userName)
+                .userName(requestDto.getNickName())
                 .openId(resp.getOpenId())
                 .sessionKey(resp.getSessionKey())
                 .build();
 
-        authMapper.saveUser(userAuth);
+        if (Objects.isNull(requestDto.getUid())){
+            authMapper.saveUser(userAuth);
+        }else {
+            authMapper.updateSessionKey(resp.getOpenId(),resp.getSessionKey());
+            userAuth.setId(requestDto.getUid());
+        }
 
         Key key = Keys.secretKeyFor(SignatureAlgorithm.HS256);
+
+        log.info(String.valueOf(userAuth.getId()));
 
         String token = Jwts.builder()
                 .signWith(key)
                 .setSubject(String.valueOf(userAuth.getId()))
-                .setExpiration(new Date(System.currentTimeMillis()+3*24*3600))
+                .setExpiration(new Date(System.currentTimeMillis()+3*24*3600*1000))
                 .compact();
 
         redisTemplate.set(token,
@@ -87,8 +95,10 @@ public class AuthServiceImpl implements AuthService {
         try {
 
             String key = (String) redisTemplate.get(token);
-            Objects.requireNonNull(key);
 
+            log.info(key);
+
+            Objects.requireNonNull(key);
 
             String uid = Jwts.parser()
                     .setSigningKey(key)
@@ -96,8 +106,11 @@ public class AuthServiceImpl implements AuthService {
                     .getBody()
                     .getSubject();
 
+            log.info(uid);
+
             return authMapper.getOpenIdById(Long.valueOf(uid));
         } catch (Exception e) {
+            log.info(e.getLocalizedMessage());
             log.info("{} is invalid", token);
             return "";
         }

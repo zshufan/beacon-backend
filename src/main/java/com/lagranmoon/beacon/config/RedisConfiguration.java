@@ -28,7 +28,7 @@ public class RedisConfiguration {
     @SuppressWarnings("unchecked")
     public RedisTemplate redisTemplate(RedisTemplate redisTemplate) {
         redisTemplate.setKeySerializer(RedisSerializer.string());
-        redisTemplate.setValueSerializer(RedisSerializer.json());
+        redisTemplate.setValueSerializer(RedisSerializer.string());
         return redisTemplate;
     }
 

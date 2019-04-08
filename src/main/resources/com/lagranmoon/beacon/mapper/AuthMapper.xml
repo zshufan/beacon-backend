@@ -5,9 +5,9 @@
 
     <insert id="saveUser" parameterType="UserAuth" useGeneratedKeys="true"
             keyProperty="id">
+
         INSERT INTO user_auth(open_id, user_name, session_key)
         VALUES (#{openId}, #{userName}, #{sessionKey})
-        ON DUPLICATE KEY UPDATE session_key = #{sessionKey}
     </insert>
 
 

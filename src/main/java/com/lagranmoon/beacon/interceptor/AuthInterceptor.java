@@ -35,11 +35,6 @@ public class AuthInterceptor extends HandlerInterceptorAdapter {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws IOException {
 
-        Enumeration<String> httpHeaders = request.getHeaderNames();
-
-        while (httpHeaders.hasMoreElements()){
-            System.out.println(httpHeaders.nextElement());
-        }
 
         try {
             String token = request.getHeader("Authorization");
