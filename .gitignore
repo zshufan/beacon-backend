@@ -179,3 +179,4 @@ src/main/resources/config/*
 
 dist/beacon/application-prod.yaml
 dist/beacon/beacon-*.jar
+log/

@@ -47,6 +47,11 @@ public class AuthServiceImpl implements AuthService {
 
         WechatAuthResp resp = wechatService.code2Session(code);
 
+//        WechatAuthResp resp =  WechatAuthResp.builder()
+//                .openId("hsdjfhsfhiw")
+//                .sessionKey("reiunjsdbnsffw")
+//                .build();
+
         log.debug(resp.toString());
 
         if (StringUtils.isEmpty(resp.getSessionKey())) {
