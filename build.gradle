@@ -1,13 +1,13 @@
 plugins {
-    id 'org.springframework.boot' version '2.1.3.RELEASE'
     id 'java'
+    id 'org.springframework.boot' version '2.1.4.RELEASE'
 }
 
 apply plugin: 'io.spring.dependency-management'
 
 group = 'com.lagranmoon'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '11'
+sourceCompatibility = '8'
 
 configurations {
     compileOnly {
@@ -16,13 +16,21 @@ configurations {
 }
 
 repositories {
-//    mavenCentral()
+
     maven {url 'https://maven.aliyun.com/repository/central'}
+}
+
+task dist(type:Copy){
+    
 }
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
     implementation 'org.springframework.boot:spring-boot-starter-web'
+
+    implementation 'org.springframework.boot:spring-boot-starter-cache'
+
+    implementation 'org.springframework.boot:spring-boot-starter-data-redis'
 
 
     implementation 'io.jsonwebtoken:jjwt-api:0.10.5'
@@ -35,4 +43,6 @@ dependencies {
     runtimeOnly 'mysql:mysql-connector-java'
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    
+
 }

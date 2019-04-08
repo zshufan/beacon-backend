@@ -8,6 +8,7 @@ import lombok.Data;
  * @author Lagranmoon
  */
 @Data
+@Builder
 public class WechatAuthResp {
 
     @JsonProperty("openid")

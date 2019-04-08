@@ -37,12 +37,12 @@ public class AuthMapperTest {
         authMapper.saveUser(userAuth);
         assertThat(userAuth.getId(),notNullValue());
 
-        String sessionKey = authMapper.getSessionKeyByUid(userAuth.getId());
+        String sessionKey = authMapper.getSessionKeyById(userAuth.getId());
         assertThat(sessionKey,equalTo(userAuth.getSessionKey()));
 
         String newSessionKey = "frewhutuiwrehrqqwewq";
         authMapper.updateSessionKey(userAuth.getOpenId(),newSessionKey);
-        String newSessionKeySaved = authMapper.getSessionKeyByUid(userAuth.getId());
+        String newSessionKeySaved = authMapper.getSessionKeyById(userAuth.getId());
         assertThat(newSessionKey,equalTo(newSessionKeySaved));
     }
 

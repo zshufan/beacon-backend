@@ -4,8 +4,18 @@ spring:
   jackson:
     default-property-inclusion: non_absent
     property-naming-strategy: SNAKE_CASE
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
+
+
 mybatis:
   mapper-locations: classpath:com/lagranmoon/beacon/mapper/*.xml
   type-aliases-package: com.lagranmoon.beacon.model.domain
   configuration:
     map-underscore-to-camel-case: true
+
+
+logging:
+  path: ./log/
+server:
+  port: 8090

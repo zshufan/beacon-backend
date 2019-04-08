@@ -1,7 +1,7 @@
 package com.lagranmoon.beacon.controller;
 
+import com.lagranmoon.beacon.model.AuthDto;
 import com.lagranmoon.beacon.model.AuthRequestDto;
-import com.lagranmoon.beacon.model.AuthResponseDto;
 import com.lagranmoon.beacon.model.ResponseDto;
 import com.lagranmoon.beacon.service.AuthService;
 import org.springframework.http.ResponseEntity;
@@ -27,12 +27,11 @@ public class AuthController {
     @PostMapping
     public ResponseEntity auth(@RequestBody @Valid AuthRequestDto requestDto) {
 
-        AuthResponseDto response = authService.auth(requestDto.getCode(), requestDto.getNickName());
-
+        AuthDto response = authService.auth(requestDto);
         return ResponseEntity
                 .ok(ResponseDto.builder()
-                                .data(response)
-                                .build());
+                        .data(response)
+                        .build());
     }
 
 

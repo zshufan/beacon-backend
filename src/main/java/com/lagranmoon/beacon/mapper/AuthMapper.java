@@ -15,10 +15,10 @@ public interface AuthMapper {
     void updateSessionKey(@Param("openId") String openId,
                           @Param("sessionKey") String sessionKey);
 
-    String getSessionKeyByUid(@Param("id") Long id);
+    String getSessionKeyById(Long id);
 
-    String getOpenIdByid(@Param(("id")) Long id);
+    String getOpenIdById(Long id);
 
-    String getUserNameByOpenId(@Param("openId") String openId);
+    String getUserNameByOpenId(String openId);
 
 }

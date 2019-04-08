@@ -27,7 +27,7 @@ public class JwtKeyResolver extends SigningKeyResolverAdapter {
 
         try {
             Long kid = Long.valueOf(header.getKeyId());
-            String sessionKey = authMapper.getSessionKeyByUid(kid);
+            String sessionKey = authMapper.getSessionKeyById(kid);
             return Keys.hmacShaKeyFor(sessionKey.getBytes());
         }catch (Exception e){
             log.debug("{} is invalid",header.getKeyId());

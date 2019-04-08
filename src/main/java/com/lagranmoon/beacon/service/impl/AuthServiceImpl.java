@@ -1,31 +1,26 @@
 package com.lagranmoon.beacon.service.impl;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.lagranmoon.beacon.exception.UnAuthorizedException;
 import com.lagranmoon.beacon.mapper.AuthMapper;
-import com.lagranmoon.beacon.model.AuthResponseDto;
+import com.lagranmoon.beacon.model.AuthDto;
+import com.lagranmoon.beacon.model.AuthRequestDto;
 import com.lagranmoon.beacon.model.WechatAuthResp;
 import com.lagranmoon.beacon.model.domain.UserAuth;
 import com.lagranmoon.beacon.service.AuthService;
-import com.lagranmoon.beacon.util.JwtKeyResolver;
-import io.jsonwebtoken.Jwt;
+import com.lagranmoon.beacon.service.WechatService;
 import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.security.Keys;
-import jdk.jfr.Unsigned;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.PropertySource;
-import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
-import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
+import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.stereotype.Service;
+import org.springframework.util.Base64Utils;
 import org.springframework.util.StringUtils;
-import org.springframework.web.client.RestTemplate;
 
 import javax.annotation.Resource;
+import java.security.Key;
+import java.time.Duration;
 import java.util.Date;
-import java.util.List;
 import java.util.Objects;
 
 /**
@@ -33,86 +28,93 @@ import java.util.Objects;
  */
 @Slf4j
 @Service
-@PropertySource(value = "classpath:config/wechat.properties")
 public class AuthServiceImpl implements AuthService {
 
-
-    @Value("${app_id}")
-    private String appId;
-
-    @Value("${auth_url}")
-    private String authUrl;
-
-    @Value("${app_secret}")
-    private String appSecret;
 
     @Resource
     private AuthMapper authMapper;
 
     @Resource
-    private JwtKeyResolver resolver;
+    private ValueOperations redisTemplate;
 
     @Resource
-    private ObjectMapper objectMapper;
+    private WechatService wechatService;
 
     @Override
-    public AuthResponseDto auth(String code, String userName) {
+    @SuppressWarnings("unchecked")
+    public AuthDto auth(AuthRequestDto requestDto) {
 
-        MappingJackson2HttpMessageConverter mappingJackson2HttpMessageConverter
-                = new MappingJackson2HttpMessageConverter(objectMapper);
-        mappingJackson2HttpMessageConverter.setSupportedMediaTypes(List.of(MediaType.APPLICATION_JSON, MediaType.TEXT_PLAIN));
-        RestTemplate template = new RestTemplate(List.of(mappingJackson2HttpMessageConverter));
+        log.debug(requestDto.getCode());
 
+//        WechatAuthResp resp = wechatService.code2Session(code);
 
-        WechatAuthResp wechatResp;
-        try {
-            wechatResp =
-                    template.getForObject(authUrl, WechatAuthResp.class, appId, appSecret, code);
-        } catch (Exception e) {
-            log.debug(e.getLocalizedMessage());
-            throw new UnAuthorizedException("连接微信服务器失败");
-        }
+        WechatAuthResp resp =  WechatAuthResp.builder()
+                .openId("hsdjfhsfhiw")
+                .sessionKey("reiunjsdbnsffw")
+                .build();
 
-        if (Objects.isNull(wechatResp)) {
-            throw new UnAuthorizedException("连接微信服务器失败");
-        }
+        log.debug(resp.toString());
 
-        if (StringUtils.isEmpty(wechatResp.getSessionKey())) {
-            throw new UnAuthorizedException(wechatResp.getErrMsg(), wechatResp.getErrCode());
+        if (StringUtils.isEmpty(resp.getSessionKey())) {
+            throw new UnAuthorizedException(resp.getErrMsg(), resp.getErrCode());
         }
 
         UserAuth userAuth = UserAuth
                 .builder()
-                .userName(userName)
-                .openId(wechatResp.getOpenId())
-                .sessionKey(wechatResp.getSessionKey())
+                .userName(requestDto.getNickName())
+                .openId(resp.getOpenId())
+                .sessionKey(resp.getSessionKey())
                 .build();
 
-        authMapper.saveUser(userAuth);
+        if (Objects.isNull(requestDto.getUid())){
+            authMapper.saveUser(userAuth);
+        }else {
+            authMapper.updateSessionKey(resp.getOpenId(),resp.getSessionKey());
+            userAuth.setId(requestDto.getUid());
+        }
+
+        Key key = Keys.secretKeyFor(SignatureAlgorithm.HS256);
+
+        log.info(String.valueOf(userAuth.getId()));
 
         String token = Jwts.builder()
-                .setHeaderParam("kid", userAuth.getId())
-                .signWith(Keys.hmacShaKeyFor(userAuth.getSessionKey().getBytes()))
+                .signWith(key)
+                .setSubject(String.valueOf(userAuth.getId()))
+                .setExpiration(new Date(System.currentTimeMillis()+3*24*3600*1000))
                 .compact();
 
-        return new AuthResponseDto(userAuth.getId(), token);
+        redisTemplate.set(token,
+                Base64Utils.encodeToString(key.getEncoded()), Duration.ofDays(3));
 
 
+        return new AuthDto(userAuth.getId(), token);
     }
 
     @Override
     public String verify(String token) {
         try {
-            String kid = Jwts.parser()
-                    .setSigningKeyResolver(resolver)
-                    .parseClaimsJws(token)
-                    .getHeader()
-                    .getKeyId();
 
-            return authMapper.getOpenIdByid(Long.valueOf(kid));
+            String key = (String) redisTemplate.get(token);
+
+            log.info(key);
+
+            Objects.requireNonNull(key);
+
+            String uid = Jwts.parser()
+                    .setSigningKey(key)
+                    .parseClaimsJws(token)
+                    .getBody()
+                    .getSubject();
+
+            log.info(uid);
+
+            return authMapper.getOpenIdById(Long.valueOf(uid));
         } catch (Exception e) {
+            log.info(e.getLocalizedMessage());
             log.info("{} is invalid", token);
             return "";
         }
     }
+
+
 }

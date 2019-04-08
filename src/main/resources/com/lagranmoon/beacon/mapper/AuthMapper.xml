@@ -5,11 +5,14 @@
 
     <insert id="saveUser" parameterType="UserAuth" useGeneratedKeys="true"
             keyProperty="id">
+
         INSERT INTO user_auth(open_id, user_name, session_key)
         VALUES (#{openId}, #{userName}, #{sessionKey})
     </insert>
 
-    <select id="getSessionKey" resultType="string">
+
+
+    <select id="getSessionKeyById" parameterType="long" resultType="string">
         SELECT session_key
         FROM user_auth
         WHERE id = #{id}
@@ -21,13 +24,13 @@
         WHERE open_id = #{openId}
     </update>
 
-    <select id="getOpenIdByid" resultType="string">
+    <select id="getOpenIdById" parameterType="long" resultType="string">
         SELECT open_id
         FROM user_auth
         WHERE id = #{id}
     </select>
 
-    <select id="getUserNameByOpenId" resultType="string">
+    <select id="getUserNameByOpenId" parameterType="string" resultType="string">
         SELECT user_name
         FROM user_auth
         WHERE open_id = #{openId}
