@@ -7,7 +7,11 @@ checkEnv(){
 }
 
 genWxConfig(){
-    if [[ ! -f src/main/resources/config/a.txt  ]];then
+    if [[ ! -d src/main/resources/config ]]; then
+        mkdir src/main/resources/config
+    fi
+
+    if [[ ! -f src/main/resources/config/wechat.properties.txt  ]];then
         touch src/main/resources/config/wechat.properties;
         cat > src/main/resources/config/wechat.properties <<EOF
 app_id=${app_id}
@@ -28,8 +32,10 @@ buildProject(){
     fi
     
     cp build/libs/beacon-*jar dist/beacon/beacon-latest.jar;
-    cp src/main/resources/application-dev.yaml dist/beacon/application-prod.yaml;
-    docker-compose up -d --force-recreate
+    cp src/main/resources/application-docker.yaml dist/beacon/application-prod.yaml;
+    docker-compose down;
+    docker-compose build --no-cache;
+    docker-compose up -d;
 }
 
 checkEnv;

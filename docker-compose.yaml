@@ -7,21 +7,23 @@ services:
       context: dist/beacon/
       dockerfile: Dockerfile
     ports:
-      - "8090:8090"
-    links:
-      - redis
-      - db
+      - 8090:8090
     depends_on:
       - redis
       - db
+    restart: always
 
   redis:
     container_name: beacon-redis
     image: "redis:alpine"
+    restart: always
   db:
     container_name: beacon-db
+    command: --default-authentication-plugin=mysql_native_password
     build:
       context: dist/sql/
       dockerfile: Dockerfile
     environment:
       MYSQL_ROOT_PASSWORD: 123456
+    restart: always
+
